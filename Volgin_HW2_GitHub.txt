@@ -1,0 +1,89 @@
+HW_2_Git_branch
+ 1. Создать внешний репозиторий c названием HW_2_branch.
+	Your profile - Repositories - New - Repository name HW_2_branch - Public - Add a README file 
+
+ 2. Клонировать репозиторий HW_2_branch на локальный компьютер.
+	Code - HTTPS - скопировать ссылку на репозиторий
+	В директории, куда будем клонировать наш репозиторий открыть Git Bash
+	-- git clone https://github.com/volginvladislav/HW_2_branch.git
+
+ 3. Внутри локального HW_2_branch сделать ветки для:
+	- Postman
+	- Jmeter
+	- CheckLists
+	- Bag Reports
+	- SQL
+	- Charles
+	- Mobile testing
+
+Заходим в папку скопированную на локальный компьютер -- cd HW_2_branch
+	-- git branch Postman
+	-- git branch Jmeter
+	-- git branch Checklists
+	-- git branch SQL
+	-- git branch Charles	
+	-- git branch Mobile testing
+	-- git push Bag_Reports
+
+4. Запушить все ветки на внешний репозиторий
+ 	-- git push -u origin Postman Charles SQL Jmeter Checklists Mobile_testing Bag_Reports
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+	--git checkout Bag_Reports
+	-- nano bagreport.txt
+	Вводим информацию:
+		1) Summary 
+  		2) Project 
+  		3) Component 
+  		4) Version 
+  		5) Severity 
+  		6) Priority
+  		7) Steps to reproduceя
+  		8) Actual Result
+  		9) Expected Result 
+  		10) Additional information 
+	Выйти - ctrl+x
+	Save modified buffer? -- y
+	File Name to Write [DOS Format]: bagreport.txt
+
+4. Запушить структуру багрепорта на внешний репозиторий
+	-- git add bagreport && git commit -m "add bagreport"
+	-- git push
+
+5. Вмержить ветку Bag Reports в Main
+	-- git checkout mein
+	-- git merge Bag_Reports
+
+6. Запушить main на внешний репозиторий.
+	-- git push -u origin main
+
+7. В ветке CheckLists набросать структуру чек листа.
+	-- git checkout Checklists
+	-- nano check.txt
+
+		1) Список проверок (с требуемой степенью детализации).
+		2) Окружение проверки:
+       			сборка, на которой проводилось тестирование;
+        		тестовое окружение (если применимо);
+        		информация о тестировщике.
+		3) Результат проверки
+
+	Выйти - ctrl+x
+	Save modified buffer? -- y
+	File Name to Write [DOS Format]: check.txt
+
+8. Запушить структуру на внешний репозиторий
+	-- git add check.txt
+	-- git commit -m "add check"
+	-- git push
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+	Compare & pull request
+	create pull request
+	merge pull request
+	Confirm merge
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+	-- git checkout main
+	-- git pull
+
